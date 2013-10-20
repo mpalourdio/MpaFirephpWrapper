@@ -9,7 +9,7 @@
  */
 
 return array(
-    'service_amanger' => array(
+    'service_manager' => array(
         'factories' => array(
             'firephp' => 'MpaFirephpWrapper\Factory\FirephpFactory',
         )
