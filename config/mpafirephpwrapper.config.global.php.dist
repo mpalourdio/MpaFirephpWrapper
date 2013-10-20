@@ -10,12 +10,10 @@
 
 return array(
     'mpafirephpwrapper' => array(
-   /** @todo implements options
-     * $options = array('maxObjectDepth' => 5,
-     * 'maxArrayDepth' => 5,
-     * 'maxDepth' => 10,
-     * 'useNativeJsonEncode' => true,
-     * 'includeLineNumbers' => true);
-     */
+        'maxObjectDepth'      => 3,
+        'maxArrayDepth'       => 3,
+        'maxDepth'            => 3,
+        'useNativeJsonEncode' => true,
+        'includeLineNumbers'  => true
     ),
 );

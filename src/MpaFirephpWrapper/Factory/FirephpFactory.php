@@ -23,6 +23,20 @@ class FirephpFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $this->firephp = new FirePHP();
+        $config        = $serviceLocator->get('Config');
+        if (array_key_exists('mpafirephpwrapper', $config)) {
+            $options = $config['mpafirephpwrapper'];
+        } else {
+            $options = array(
+                'maxObjectDepth'      => 3,
+                'maxArrayDepth'       => 3,
+                'maxDepth'            => 3,
+                'useNativeJsonEncode' => true,
+                'includeLineNumbers'  => true
+            );
+        }
+
+        $this->firephp->setOptions($options);
 
         return $this;
     }
