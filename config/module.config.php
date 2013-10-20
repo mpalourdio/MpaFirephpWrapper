@@ -10,8 +10,13 @@
 
 return array(
     'controller_plugins' => array(
-        'factories' => array(
+        'invokables' => array(
             'firephp' => 'MpaFirephpWrapper\Controller\Plugin\FirephpPlugin',
+        )
+    ),
+    'view_helpers'       => array(
+        'invokables' => array(
+            'firephp' => 'MpaFirephpWrapper\View\Helper\FirephpHelper',
         )
     ),
 );

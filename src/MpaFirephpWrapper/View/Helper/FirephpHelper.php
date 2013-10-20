@@ -8,12 +8,12 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-namespace MpaFirephpWrapper\Controller\Plugin;
+namespace MpaFirephpWrapper\View\helper;
 
 use FirePHP;
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+use Zend\View\Helper\AbstractHelper;
 
-class FirephpPlugin extends AbstractPlugin
+class FirephpPlugin extends AbstractHelper
 {
     public function __invoke($object, $label = null, $options = array())
     {
