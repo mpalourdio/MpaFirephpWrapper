@@ -10,14 +10,24 @@
 
 namespace MpaFirephpWrapper\Controller\Plugin;
 
-use FirePHP;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
-class FirephpPlugin extends AbstractPlugin
+class FirephpPlugin extends AbstractPlugin implements FactoryInterface
 {
+    protected $sm;
+
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        $this->sm = $serviceLocator->getServicelocator();
+
+        return $this;
+    }
+
     public function __invoke($object, $label = null, $options = array())
     {
-        $firephp = new FirePHP();
+        $firephp = new $this->sm->get('firephp');
 
         return $firephp->info($object, $label, $options);
     }
