@@ -26,4 +26,9 @@ $this->firephp($mythingtolog);
 Warning
 ==================================================
 
-Deep objects can freeze the plugin. Some options to configure depth are about to come
+Deep objects can freeze the plugin. You can set your own options in mpafirephpwrapper.config.global.php
+
+Todo
+==================================================
+
+All logs are set by fb->info(). log/warn/error methods will come in the future.
