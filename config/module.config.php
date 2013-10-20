@@ -8,4 +8,10 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-return array();
+return array(
+    'controller_plugins' => array(
+        'factories' => array(
+            'firephp' => 'MpaFirephpWrapper\Controller\Plugin\FirephpPlugin',
+        )
+    ),
+);

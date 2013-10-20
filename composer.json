@@ -18,6 +18,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
+        "firephp/firephp-core": "dev-master",
         "zendframework/zendframework": "2.2.*"
     },
     "minimum-stability": "dev",
