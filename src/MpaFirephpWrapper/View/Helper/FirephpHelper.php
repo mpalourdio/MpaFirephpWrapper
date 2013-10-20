@@ -13,7 +13,7 @@ namespace MpaFirephpWrapper\View\helper;
 use FirePHP;
 use Zend\View\Helper\AbstractHelper;
 
-class FirephpPlugin extends AbstractHelper
+class FirephpHelper extends AbstractHelper
 {
     public function __invoke($object, $label = null, $options = array())
     {
