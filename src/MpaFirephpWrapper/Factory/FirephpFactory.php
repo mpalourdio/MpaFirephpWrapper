@@ -8,7 +8,7 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
+/** @todo, implement log/info/warn/error */
 namespace MpaFirephpWrapper\Factory;
 
 use FirePHP;
@@ -17,10 +17,18 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class FirephpFactory implements FactoryInterface
 {
+    /** @var  FirePHP $firephp */
+    protected $firephp;
+
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $firephp = new FirePHP();
+        $this->firephp = new FirePHP();
 
-        return $firephp;
+        return $this;
+    }
+
+    public function write($object, $label = null, $options = array())
+    {
+        return $this->firephp->info($object, $label, $options);
     }
 }

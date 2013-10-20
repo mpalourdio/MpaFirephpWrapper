@@ -9,5 +9,13 @@
  */
 
 return array(
-    'mpafirephpwrapper' => array(),
+    'mpafirephpwrapper' => array(
+   /** @todo implements options
+     * $options = array('maxObjectDepth' => 5,
+     * 'maxArrayDepth' => 5,
+     * 'maxDepth' => 10,
+     * 'useNativeJsonEncode' => true,
+     * 'includeLineNumbers' => true);
+     */
+    ),
 );

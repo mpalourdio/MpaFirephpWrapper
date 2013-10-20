@@ -27,8 +27,8 @@ class FirephpPlugin extends AbstractPlugin implements FactoryInterface
 
     public function __invoke($object, $label = null, $options = array())
     {
-        $firephp = new $this->sm->get('firephp');
+        $firephp = $this->sm->get('firephp');
 
-        return $firephp->info($object, $label, $options);
+        return $firephp->write($object, $label, $options);
     }
 }
