@@ -10,16 +10,17 @@ extension.
 
 Installation
 ============
-Add to the **require** list
+Add to the **require** list of your top composer.json
+```php
 "mpalourdio/mpa-firephp-wrapper": "dev-master"
-
+```
 Add "MpaFirephpWrapper" to your **modules list** in **application.config.php**
 
 Usage (in a controller action or in a view script)
 ==================================================
 
 ```php
-$hydrator = $this->firephp($mythingtolog);
+$this->firephp($mythingtolog);
 ```
 
 Warning
