@@ -1,0 +1,29 @@
+{
+    "name": "mpalourdio/mpa-firephp-wrapper",
+    "description": "Provides a view helper and a controller plugin for firephp integration with ZF2 Zendlog component",
+    "license": "MIT",
+    "keywords": [
+        "firephp",
+        "zendlog",
+        "module",
+        "zf2"
+    ],
+    "homepage": "https://github.com/mpalourdio/MpaFirephpWrapper",
+    "authors": [
+        {
+            "name": "@mpalourdio",
+            "email": "mpalourdio@gmail.com",
+            "homepage": "https://github.com/mpalourdio"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.2.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "MpaFirephpWrapper\\": "src/"
+        }
+    }
+}
