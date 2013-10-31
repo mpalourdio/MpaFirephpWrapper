@@ -8,20 +8,16 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-return array(
-    'service_manager' => array(
-        'factories' => array(
-            'firephp' => 'MpaFirephpWrapper\Service\FirephpFactory',
-        )
-    ),
-    'controller_plugins' => array(
-        'invokables' => array(
-            'firephp' => 'MpaFirephpWrapper\Controller\Plugin\FirephpPlugin',
-        )
-    ),
-    'view_helpers'       => array(
-        'invokables' => array(
-            'firephp' => 'MpaFirephpWrapper\View\Helper\FirephpHelper',
-        )
-    ),
-);
+namespace MpaFirephpWrapper\Service;
+
+use MpaFirephpWrapper\Service\FirephpWrapper;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+class FirephpFactory implements FactoryInterface
+{
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        return new FirephpWrapper($serviceLocator);
+    }
+}

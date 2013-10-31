@@ -8,19 +8,17 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/** @todo, implement log/info/warn/error */
-namespace MpaFirephpWrapper\Factory;
+namespace MpaFirephpWrapper\Service;
 
 use FirePHP;
-use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class FirephpFactory implements FactoryInterface
+class FirephpWrapper
 {
     /** @var  FirePHP $firephp */
     protected $firephp;
 
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __construct(ServiceLocatorInterface $serviceLocator)
     {
         $this->firephp = new FirePHP();
         $config        = $serviceLocator->get('Config');
@@ -37,12 +35,10 @@ class FirephpFactory implements FactoryInterface
         }
 
         $this->firephp->setOptions($options);
-
-        return $this;
     }
 
-    public function write($object, $label = null, $options = array())
+    public function write($object, $type = 'info', $label = null, $options = array())
     {
-        return $this->firephp->info($object, $label, $options);
+        return $this->firephp->$type($object, $label, $options);
     }
 }

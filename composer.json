@@ -1,10 +1,9 @@
 {
     "name": "mpalourdio/mpa-firephp-wrapper",
-    "description": "Provides a view helper and a controller plugin for firephp integration with ZF2 Zendlog component",
+    "description": "Lightweight ZF2 module that wraps firephp. Provides a view helper and a controller plugin. Easily configurable and usable",
     "license": "MIT",
     "keywords": [
         "firephp",
-        "zendlog",
         "module",
         "zf2"
     ],

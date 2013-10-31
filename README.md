@@ -1,7 +1,7 @@
 MpaFirephpWrapper
 =================
 
-Provides a view helper and a controller plugin for firephp quick integration with ZF2.
+Lightweight ZF2 module that wraps firephp. Provides a view helper and a controller plugin. Easily configurable and usable.
 
 Configuration
 =============
@@ -22,6 +22,11 @@ Usage (in a controller action or in a view script)
 ```php
 $this->firephp($mythingtolog);
 ```
+Default is set to bind the info() method of FirePHP. You can override this by doing
+```php
+$this->firephp($mythingtolog, 'warn'); // possibilites are log/info/warn/error
+```
+
 
 Warning
 ==================================================
@@ -31,4 +36,4 @@ Deep objects can freeze the plugin. You can set your own options in mpafirephpwr
 Todo
 ==================================================
 
-All logs are set by fb->info(). log/warn/error methods will come in the future.
+ZDT integration
