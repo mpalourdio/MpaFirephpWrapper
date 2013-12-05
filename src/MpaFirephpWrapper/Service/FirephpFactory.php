@@ -10,7 +10,6 @@
 
 namespace MpaFirephpWrapper\Service;
 
-use MpaFirephpWrapper\Service\FirephpWrapper;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
