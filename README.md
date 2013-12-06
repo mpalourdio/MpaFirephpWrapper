@@ -33,7 +33,7 @@ Warning
 
 Deep objects can freeze the plugin. You can set your own options in mpafirephpwrapper.config.global.php
 
-Todo
+ZDT integration
 ==================================================
 
-ZDT integration
+The Zend Developper Toolbar will show you how many 'things' are logged to Firephp

@@ -11,9 +11,17 @@
 namespace MpaFirephpWrapper;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\Mvc\MvcEvent;
 
 class Module implements AutoloaderProviderInterface
 {
+    public function onBootstrap(MvcEvent $e)
+    {
+        $serviceManager = $e->getApplication()->getServiceManager();
+        $pluralHelper   = $serviceManager->get('ViewHelperManager')->get('Plural');
+        $pluralHelper->setPluralRule('nplurals=2; plural=n!=1');
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -9,9 +9,10 @@
  */
 
 return array(
-    'service_manager' => array(
+    'service_manager'    => array(
         'factories' => array(
-            'firephp' => 'MpaFirephpWrapper\Service\FirephpFactory',
+            'firephp'                                      => 'MpaFirephpWrapper\Service\FirephpFactory',
+            'MpaFirephpWrapper\Collector\FirephpCollector' => 'MpaFirephpWrapper\Service\FirephpCollectorServiceFactory',
         )
     ),
     'controller_plugins' => array(
@@ -23,5 +24,22 @@ return array(
         'invokables' => array(
             'firephp' => 'MpaFirephpWrapper\View\Helper\FirephpHelper',
         )
+    ),
+    'view_manager'       => array(
+        'template_map' => array(
+            'zend-developer-tools/toolbar/mpa-firephp-wrapper' => __DIR__ . '/../view/zend-developer-tools/toolbar/mpa-firephp-wrapper.phtml',
+        ),
+    ),
+    'zenddevelopertools' => array(
+        'profiler' => array(
+            'collectors' => array(
+                'mpa_firephp_wrapper_collector' => 'MpaFirephpWrapper\Collector\FirephpCollector',
+            ),
+        ),
+        'toolbar'  => array(
+            'entries' => array(
+                'mpa_firephp_wrapper_collector' => 'zend-developer-tools/toolbar/mpa-firephp-wrapper',
+            ),
+        ),
     ),
 );

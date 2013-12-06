@@ -17,6 +17,7 @@ class FirephpWrapper
 {
     /** @var  FirePHP $firephp */
     protected $firephp;
+    protected $howManyLogged;
 
     public function __construct(ServiceLocatorInterface $serviceLocator)
     {
@@ -39,6 +40,13 @@ class FirephpWrapper
 
     public function write($object, $type = 'info', $label = null, $options = array())
     {
+        $this->howManyLogged++;
+
         return $this->firephp->$type($object, $label, $options);
+    }
+
+    public function howManyLogged()
+    {
+        return $this->howManyLogged;
     }
 }
