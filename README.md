@@ -36,4 +36,4 @@ Deep objects can freeze the plugin. You can set your own options in mpafirephpwr
 ZDT integration
 ==================================================
 
-The Zend Developper Toolbar will show you how many 'things' are logged to Firephp
+The Zend Developer Tools toolbar will show you how many 'things' are logged to Firephp
