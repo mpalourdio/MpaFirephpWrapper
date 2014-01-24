@@ -1,7 +1,14 @@
+[![Build Status](https://travis-ci.org/mpalourdio/MpaFirephpWrapper.png)](https://travis-ci.org/mpalourdio/MpaFirephpWrapper)
+
 MpaFirephpWrapper
 =================
 
 Lightweight ZF2 module that wraps firephp. Provides a view helper and a controller plugin. Easily configurable and usable.
+
+Requirements
+============
+
+PHP 5.4+
 
 Configuration
 =============
