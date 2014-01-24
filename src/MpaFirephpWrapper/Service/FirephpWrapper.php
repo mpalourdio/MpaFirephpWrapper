@@ -21,8 +21,8 @@ class FirephpWrapper
 
     public function __construct(ServiceLocatorInterface $serviceLocator)
     {
-        $this->firephp = new FirePHP();
-        $config        = $serviceLocator->get('Config');
+        $this->setFirephp(new FirePHP());
+        $config = $serviceLocator->get('Config');
         if (array_key_exists('mpafirephpwrapper', $config)) {
             $options = $config['mpafirephpwrapper'];
         } else {
@@ -48,5 +48,21 @@ class FirephpWrapper
     public function howManyLogged()
     {
         return $this->howManyLogged;
+    }
+
+    /**
+     * @param \FirePHP $firephp
+     */
+    public function setFirephp($firephp)
+    {
+        $this->firephp = $firephp;
+    }
+
+    /**
+     * @return \FirePHP
+     */
+    public function getFirephp()
+    {
+        return $this->firephp;
     }
 }
