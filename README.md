@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mpalourdio/MpaFirephpWrapper.png)](https://travis-ci.org/mpalourdio/MpaFirephpWrapper)
+[![Build Status](https://travis-ci.org/mpalourdio/MpaFirephpWrapper.png?branch=master)](https://travis-ci.org/mpalourdio/MpaFirephpWrapper)
 
 MpaFirephpWrapper
 =================
