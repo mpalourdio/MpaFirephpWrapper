@@ -38,7 +38,7 @@ class FirephpPlugin extends AbstractPlugin implements ServiceLocatorAwareInterfa
         return $this->sm;
     }
 
-    public function __invoke($object, $type = 'info', $label = null, $options = array())
+    public function __invoke($object, $type = 'info', $label = null, $options = [])
     {
         $firephp = $this->getServicelocator()->get('firephp');
 

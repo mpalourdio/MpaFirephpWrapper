@@ -16,10 +16,16 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.4",
         "firephp/firephp-core": "dev-master",
         "zendframework/zendframework": "2.2.*",
         "zendframework/zend-developer-tools": "*"
+    },
+    "require-dev": {
+        "firephp/firephp-core": "dev-master",
+        "zendframework/zendframework": "2.2.*",
+        "phpunit/phpunit":             "~3.7",
+        "squizlabs/php_codesniffer":   "1.4.*"
     },
     "minimum-stability": "dev",
     "autoload": {

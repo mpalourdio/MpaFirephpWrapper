@@ -26,19 +26,19 @@ class FirephpWrapper
         if (array_key_exists('mpafirephpwrapper', $config)) {
             $options = $config['mpafirephpwrapper'];
         } else {
-            $options = array(
+            $options = [
                 'maxObjectDepth'      => 3,
                 'maxArrayDepth'       => 3,
                 'maxDepth'            => 3,
                 'useNativeJsonEncode' => true,
                 'includeLineNumbers'  => true
-            );
+            ];
         }
 
         $this->firephp->setOptions($options);
     }
 
-    public function write($object, $type = 'info', $label = null, $options = array())
+    public function write($object, $type = 'info', $label = null, $options = [])
     {
         $this->howManyLogged++;
 

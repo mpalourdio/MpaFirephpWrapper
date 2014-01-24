@@ -9,7 +9,7 @@ $howManyLogged = $collector->getHowManyLogged();
         <span class="zdt-toolbar-info">
             <?php
             if ($howManyLogged > 0) {
-                echo $howManyLogged . ' ' . $this->plural(array('log', 'logs'), $howManyLogged);
+                echo $howManyLogged . ' ' . $this->plural(['log', 'logs'], $howManyLogged);
             }
             ?>
         </span>

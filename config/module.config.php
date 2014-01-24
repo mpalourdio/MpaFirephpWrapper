@@ -8,38 +8,38 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-return array(
-    'service_manager'    => array(
-        'factories' => array(
+return [
+    'service_manager'    => [
+        'factories' => [
             'firephp'                                      => 'MpaFirephpWrapper\Service\FirephpFactory',
             'MpaFirephpWrapper\Collector\FirephpCollector' => 'MpaFirephpWrapper\Service\FirephpCollectorServiceFactory',
-        )
-    ),
-    'controller_plugins' => array(
-        'invokables' => array(
+        ]
+    ],
+    'controller_plugins' => [
+        'invokables' => [
             'firephp' => 'MpaFirephpWrapper\Controller\Plugin\FirephpPlugin',
-        )
-    ),
-    'view_helpers'       => array(
-        'invokables' => array(
+        ]
+    ],
+    'view_helpers'       => [
+        'invokables' => [
             'firephp' => 'MpaFirephpWrapper\View\Helper\FirephpHelper',
-        )
-    ),
-    'view_manager'       => array(
-        'template_map' => array(
+        ]
+    ],
+    'view_manager'       => [
+        'template_map' => [
             'zend-developer-tools/toolbar/mpa-firephp-wrapper' => __DIR__ . '/../view/zend-developer-tools/toolbar/mpa-firephp-wrapper.phtml',
-        ),
-    ),
-    'zenddevelopertools' => array(
-        'profiler' => array(
-            'collectors' => array(
+        ],
+    ],
+    'zenddevelopertools' => [
+        'profiler' => [
+            'collectors' => [
                 'mpa_firephp_wrapper_collector' => 'MpaFirephpWrapper\Collector\FirephpCollector',
-            ),
-        ),
-        'toolbar'  => array(
-            'entries' => array(
+            ],
+        ],
+        'toolbar'  => [
+            'entries' => [
                 'mpa_firephp_wrapper_collector' => 'zend-developer-tools/toolbar/mpa-firephp-wrapper',
-            ),
-        ),
-    ),
-);
+            ],
+        ],
+    ],
+];
