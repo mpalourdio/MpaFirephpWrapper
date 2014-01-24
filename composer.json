@@ -24,8 +24,7 @@
     "require-dev": {
         "firephp/firephp-core": "dev-master",
         "zendframework/zendframework": "2.2.*",
-        "phpunit/phpunit":             "~3.7",
-        "squizlabs/php_codesniffer":   "1.4.*"
+        "phpunit/phpunit":             "~3.7"
     },
     "minimum-stability": "dev",
     "autoload": {
