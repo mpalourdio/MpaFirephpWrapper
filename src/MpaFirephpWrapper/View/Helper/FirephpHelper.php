@@ -39,7 +39,7 @@ class FirephpHelper extends AbstractHelper implements ServiceLocatorAwareInterfa
     }
 
 
-    public function __invoke($object, $type = 'info', $label = null, $options = array())
+    public function __invoke($object, $type = 'info', $label = null, $options = [])
     {
         $firephp = $this->getServicelocator()->get('firephp');
 
