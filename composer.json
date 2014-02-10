@@ -15,6 +15,7 @@
             "homepage": "https://github.com/mpalourdio"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php":                                ">=5.4",
         "firephp/firephp-core":               "0.4.0",
