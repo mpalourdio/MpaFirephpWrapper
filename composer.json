@@ -18,7 +18,6 @@
     "require": {
         "php":                                ">=5.4",
         "firephp/firephp-core":               "0.4.0",
-        "zendframework/zend-mvc":             "~2.3",
         "zendframework/zend-servicemanager":  "~2.3"
     },
     "require-dev": {
