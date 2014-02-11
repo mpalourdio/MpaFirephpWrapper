@@ -10,30 +10,16 @@
 
 namespace MpaFirephpWrapper;
 
-use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Mvc\MvcEvent;
 
-class Module implements AutoloaderProviderInterface
+class Module implements ConfigProviderInterface
 {
     public function onBootstrap(MvcEvent $e)
     {
         $serviceManager = $e->getApplication()->getServiceManager();
         $pluralHelper   = $serviceManager->get('ViewHelperManager')->get('Plural');
         $pluralHelper->setPluralRule('nplurals=2; plural=n!=1');
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getAutoloaderConfig()
-    {
-        return [
-            'Zend\Loader\StandardAutoloader' => [
-                'namespaces' => [
-                    __NAMESPACE__ => __DIR__ . '/../../src/' . __NAMESPACE__,
-                ],
-            ],
-        ];
     }
 
     /**
