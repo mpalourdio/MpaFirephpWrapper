@@ -17,28 +17,28 @@ use PHPUnit_Framework_TestCase as TestCase;
 
 class FirephpFactoryTest extends TestCase
 {
-    protected $sm;
+    protected $serviceManager;
 
     protected function setUp()
     {
-        $this->sm = ServiceManagerFactory::getServiceManager();
+        $this->serviceManager = ServiceManagerFactory::getServiceManager();
     }
 
     public function testFirephpFactoryCanBeInitalized()
     {
-        $this->sm->setService(
+        $this->serviceManager->setService(
             'firephptest',
             $this->getMock('MpaFirephpWrapper\Service\FirephpFactory')
         );
 
         $factory = new FirephpFactory();
-        $result  = $factory->createService($this->sm);
+        $result  = $factory->createService($this->serviceManager);
         $this->assertInstanceOf('MpaFirephpWrapper\Service\FirephpWrapper', $result);
     }
 
     public function testFirephpWrapperReallyWrapsFirePHP()
     {
-        $wrapper = (new FirephpWrapper($this->sm))->getFirephp();
+        $wrapper = (new FirephpWrapper($this->serviceManager))->getFirephp();
         $this->assertInstanceOf('FirePHP', $wrapper);
     }
 }

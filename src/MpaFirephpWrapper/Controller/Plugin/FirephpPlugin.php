@@ -16,7 +16,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class FirephpPlugin extends AbstractPlugin implements ServiceLocatorAwareInterface
 {
-    protected $sm;
+    protected $parentLocator;
 
     /**
      * Set service locator
@@ -25,7 +25,7 @@ class FirephpPlugin extends AbstractPlugin implements ServiceLocatorAwareInterfa
      */
     public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
     {
-        $this->sm = $serviceLocator->getServiceLocator();
+        $this->parentLocator = $serviceLocator->getServiceLocator();
     }
 
     /**
@@ -35,7 +35,7 @@ class FirephpPlugin extends AbstractPlugin implements ServiceLocatorAwareInterfa
      */
     public function getServiceLocator()
     {
-        return $this->sm;
+        return $this->parentLocator;
     }
 
     public function __invoke($object, $type = 'info', $label = null, $options = [])

@@ -16,7 +16,7 @@ use Zend\View\Helper\AbstractHelper;
 
 class FirephpHelper extends AbstractHelper implements ServiceLocatorAwareInterface
 {
-    protected $sm;
+    protected $parentLocator;
 
     /**
      * Set service locator
@@ -25,7 +25,7 @@ class FirephpHelper extends AbstractHelper implements ServiceLocatorAwareInterfa
      */
     public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
     {
-        $this->sm = $serviceLocator->getServiceLocator();
+        $this->parentLocator = $serviceLocator->getServiceLocator();
     }
 
     /**
@@ -35,7 +35,7 @@ class FirephpHelper extends AbstractHelper implements ServiceLocatorAwareInterfa
      */
     public function getServiceLocator()
     {
-        return $this->sm;
+        return $this->parentLocator;
     }
 
 

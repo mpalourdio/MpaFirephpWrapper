@@ -15,9 +15,9 @@ use Zend\Mvc\MvcEvent;
 
 class Module implements ConfigProviderInterface
 {
-    public function onBootstrap(MvcEvent $e)
+    public function onBootstrap(MvcEvent $event)
     {
-        $serviceManager = $e->getApplication()->getServiceManager();
+        $serviceManager = $event->getApplication()->getServiceManager();
         $pluralHelper   = $serviceManager->get('ViewHelperManager')->get('Plural');
         $pluralHelper->setPluralRule('nplurals=2; plural=n!=1');
     }
