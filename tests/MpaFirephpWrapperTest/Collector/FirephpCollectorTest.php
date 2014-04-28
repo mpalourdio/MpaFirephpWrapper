@@ -1,4 +1,5 @@
 <?php
+
 /*
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
@@ -7,14 +8,12 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+namespace MpaFirephpWrapper\Collector;
 
-namespace MpaFirephpWrapperTest\Service;
-
-use MpaFirephpWrapper\Service\FirephpFactory;
+use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
-use PHPUnit_Framework_TestCase as TestCase;
 
-class FirephpFactoryTest extends TestCase
+class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
 {
     protected $serviceManager;
 
@@ -23,15 +22,13 @@ class FirephpFactoryTest extends TestCase
         $this->serviceManager = ServiceManagerFactory::getServiceManager();
     }
 
-    public function testFirephpFactoryCanBeInitalized()
+    public function testCollector()
     {
-        $this->serviceManager->setService(
-            'firephptest',
-            $this->getMock('MpaFirephpWrapper\Service\FirephpFactory')
-        );
+        $wrapper   = new FirephpWrapper($this->serviceManager);
+        $collector = new FirephpCollector($wrapper);
 
-        $factory = new FirephpFactory();
-        $result  = $factory->createService($this->serviceManager);
-        $this->assertInstanceOf('MpaFirephpWrapper\Service\FirephpWrapper', $result);
+        $this->assertEquals('mpa_firephp_wrapper_collector', $collector->getName());
+        $this->assertEquals(0, $collector->getHowManyLogged());
+        $this->assertEquals(150, $collector->getPriority());
     }
 }

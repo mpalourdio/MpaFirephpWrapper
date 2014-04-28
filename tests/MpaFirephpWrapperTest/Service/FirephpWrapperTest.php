@@ -10,11 +10,10 @@
 
 namespace MpaFirephpWrapperTest\Service;
 
-use MpaFirephpWrapper\Service\FirephpFactory;
+use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
-use PHPUnit_Framework_TestCase as TestCase;
 
-class FirephpFactoryTest extends TestCase
+class FirephpWrapperTest extends \PHPUnit_Framework_TestCase
 {
     protected $serviceManager;
 
@@ -23,15 +22,9 @@ class FirephpFactoryTest extends TestCase
         $this->serviceManager = ServiceManagerFactory::getServiceManager();
     }
 
-    public function testFirephpFactoryCanBeInitalized()
+    public function testFirephpWrapperReallyWrapsFirePHP()
     {
-        $this->serviceManager->setService(
-            'firephptest',
-            $this->getMock('MpaFirephpWrapper\Service\FirephpFactory')
-        );
-
-        $factory = new FirephpFactory();
-        $result  = $factory->createService($this->serviceManager);
-        $this->assertInstanceOf('MpaFirephpWrapper\Service\FirephpWrapper', $result);
+        $wrapper = (new FirephpWrapper($this->serviceManager))->getFirephp();
+        $this->assertInstanceOf('FirePHP', $wrapper);
     }
 }
