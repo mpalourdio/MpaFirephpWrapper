@@ -11,9 +11,9 @@
 return [
     'service_manager'    => [
         'factories' => [
-            'firephp'                                      => 'MpaFirephpWrapper\Service\FirephpFactory',
+            'firephp' => 'MpaFirephpWrapper\Service\FirephpFactory',
             'MpaFirephpWrapper\Collector\FirephpCollector'
-                => 'MpaFirephpWrapper\Service\FirephpCollectorServiceFactory',
+                      => 'MpaFirephpWrapper\Service\FirephpCollectorServiceFactory',
         ]
     ],
     'controller_plugins' => [
@@ -29,7 +29,7 @@ return [
     'view_manager'       => [
         'template_map' => [
             'zend-developer-tools/toolbar/mpa-firephp-wrapper'
-                => __DIR__ . '/../view/zend-developer-tools/toolbar/mpa-firephp-wrapper.phtml',
+            => __DIR__ . '/../view/zend-developer-tools/toolbar/mpa-firephp-wrapper.phtml',
         ],
     ],
     'zenddevelopertools' => [
