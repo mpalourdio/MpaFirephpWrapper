@@ -1,24 +1,24 @@
 {
-    "name": "mpalourdio/mpa-firephp-wrapper",
+    "name":        "mpalourdio/mpa-firephp-wrapper",
     "description": "Lightweight ZF2 module that wraps firephp. Provides a view helper and a controller plugin. Easily configurable and usable",
-    "license": "MIT",
-    "keywords": [
+    "license":     "MIT",
+    "keywords":    [
         "firephp",
         "module",
         "zf2"
     ],
-    "homepage": "https://github.com/mpalourdio/MpaFirephpWrapper",
-    "authors": [
+    "homepage":    "https://github.com/mpalourdio/MpaFirephpWrapper",
+    "authors":     [
         {
-            "name": "@mpalourdio",
-            "email": "mpalourdio@gmail.com",
+            "name":     "@mpalourdio",
+            "email":    "mpalourdio@gmail.com",
             "homepage": "https://github.com/mpalourdio"
         }
     ],
-    "require": {
-        "php":                                ">=5.4",
-        "firephp/firephp-core":               "0.4.0",
-        "zendframework/zend-servicemanager":  "2.3.*"
+    "require":     {
+        "php":                               ">=5.4",
+        "firephp/firephp-core":              "0.4.0",
+        "zendframework/zend-servicemanager": "2.3.*"
     },
     "require-dev": {
         "firephp/firephp-core":               "0.4.0",
@@ -27,11 +27,10 @@
         "phpunit/phpunit":                    "~3.7",
         "squizlabs/php_codesniffer":          "1.5.*"
     },
-    "suggest": {
+    "suggest":     {
         "zendframework/zend-developer-tools": "zend-developer-tools if you want to profile firephp logging"
     },
-    "minimum-stability": "dev",
-    "autoload": {
+    "autoload":    {
         "psr-0": {
             "MpaFirephpWrapper\\": "src/"
         }
