@@ -11,7 +11,7 @@ Lightweight ZF2 module that wraps firephp. Provides a view helper and a controll
 Requirements
 ============
 
-PHP 5.4+
+PHP 5.5+
 
 Configuration
 =============

@@ -8,28 +8,33 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+use MpaFirephpWrapper\Collector\FirephpCollector;
+use MpaFirephpWrapper\Controller\Plugin\FirephpPlugin;
+use MpaFirephpWrapper\Service\FirephpCollectorServiceFactory;
+use MpaFirephpWrapper\Service\FirephpFactory;
+use MpaFirephpWrapper\View\Helper\FirephpHelper;
+
 return [
     'service_manager'    => [
         'factories' => [
-            'firephp' => 'MpaFirephpWrapper\Service\FirephpFactory',
-            'MpaFirephpWrapper\Collector\FirephpCollector'
-                      => 'MpaFirephpWrapper\Service\FirephpCollectorServiceFactory',
+            'firephp'               => FirephpFactory::class,
+            FirephpCollector::class => FirephpCollectorServiceFactory::class,
         ]
     ],
     'controller_plugins' => [
         'invokables' => [
-            'firephp' => 'MpaFirephpWrapper\Controller\Plugin\FirephpPlugin',
+            'firephp' => FirephpPlugin::class,
         ]
     ],
     'view_helpers'       => [
         'invokables' => [
-            'firephp' => 'MpaFirephpWrapper\View\Helper\FirephpHelper',
+            'firephp' => FirephpHelper::class,
         ]
     ],
     'view_manager'       => [
         'template_map' => [
             'zend-developer-tools/toolbar/mpa-firephp-wrapper'
-                => __DIR__ . '/../view/zend-developer-tools/toolbar/mpa-firephp-wrapper.phtml',
+            => __DIR__ . '/../view/zend-developer-tools/toolbar/mpa-firephp-wrapper.phtml',
         ],
     ],
     'zenddevelopertools' => [

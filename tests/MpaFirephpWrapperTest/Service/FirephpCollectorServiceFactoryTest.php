@@ -10,6 +10,7 @@
 
 namespace MpaFirephpWrapperTest\Service;
 
+use MpaFirephpWrapper\Collector\FirephpCollector;
 use MpaFirephpWrapper\Service\FirephpCollectorServiceFactory;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 
@@ -25,9 +26,6 @@ class FirephpCollectorServiceFactoryTest extends \PHPUnit_Framework_TestCase
     public function testFactoryCanBeCreated()
     {
         $cFactory = new FirephpCollectorServiceFactory();
-        $this->assertInstanceOf(
-            'MpaFirephpWrapper\Collector\FirephpCollector',
-            $cFactory->createService($this->serviceManager)
-        );
+        $this->assertInstanceOf(FirephpCollector::class, $cFactory->createService($this->serviceManager));
     }
 }

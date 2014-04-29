@@ -11,6 +11,7 @@
 namespace MpaFirephpWrapperTest\Controller\Plugin;
 
 use MpaFirephpWrapper\Controller\Plugin\FirephpPlugin;
+use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 
 class FirephpPluginTest extends \PHPUnit_Framework_TestCase
@@ -25,7 +26,7 @@ class FirephpPluginTest extends \PHPUnit_Framework_TestCase
 
         $firePhpPlugin->setServiceLocator($pluginManager);
 
-        $this->assertInstanceOf('MpaFirephpWrapper\Service\FirephpWrapper', $firePhpPlugin->__invoke('test'));
+        $this->assertInstanceOf(FirephpWrapper::class, $firePhpPlugin->__invoke('test'));
     }
 
     /**
