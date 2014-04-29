@@ -3,7 +3,6 @@ language: php
 php:
   - 5.5
   - hhvm
-  - hhvm-nightly
 
 matrix:
   allow_failures:
