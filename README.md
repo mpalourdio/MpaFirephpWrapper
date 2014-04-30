@@ -22,7 +22,7 @@ Installation
 ============
 Add to the **require** list of your top composer.json
 ```php
-"mpalourdio/mpa-firephp-wrapper": "0.1.0"
+"mpalourdio/mpa-firephp-wrapper": "0.*"
 ```
 Add "MpaFirephpWrapper" to your **modules list** in **application.config.php**
 
