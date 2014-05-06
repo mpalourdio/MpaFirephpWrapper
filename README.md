@@ -32,18 +32,18 @@ Usage (in a controller action or in a view script)
 ```php
 $this->firephp($mythingtolog);
 ```
-Default is set to bind the info() method of FirePHP. You can override this by doing
+The default behavior is set to bind the info() method of FirePHP. You can override this by doing
 ```php
-$this->firephp($mythingtolog, 'warn'); // possibilites are log/info/warn/error
+$this->firephp($mythingtolog, 'warn'); // the different possibilites are log/info/warn/error
 ```
 
 
 Warning
 ==================================================
 
-Deep objects can freeze the plugin. You can set your own options in mpafirephpwrapper.config.global.php
+Deep objects can freeze the plugin. You can set your own depth options in mpafirephpwrapper.config.global.php
 
 ZDT integration
 ==================================================
 
-The Zend Developer Tools toolbar will show you how many 'things' are logged to Firephp
+The Zend Developer Tools toolbar will show you how many events are logged to Firephp
