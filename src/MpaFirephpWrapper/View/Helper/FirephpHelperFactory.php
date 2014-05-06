@@ -10,27 +10,24 @@
 
 namespace MpaFirephpWrapper\View\Helper;
 
-use MpaFirephpWrapper\Service\FirephpWrapper;
-use Zend\View\Helper\AbstractHelper;
 
-class FirephpHelper extends AbstractHelper
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+class FirephpHelperFactory implements FactoryInterface
 {
-    protected $firephp;
-
-    public function __construct(FirephpWrapper $firephp)
-    {
-        $this->firephp = $firephp;
-    }
-
     /**
-     * @param $object
-     * @param string $type
-     * @param string $label
-     * @param array $options
-     * @return FirephpWrapper
+     * Create service
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return FirephpHelper
      */
-    public function __invoke($object, $type = 'info', $label = null, $options = [])
+    public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return $this->firephp->write($object, $type, $label, $options);
+        $parentLocator = $serviceLocator->getServiceLocator();
+
+        return new FirephpHelper(
+            $parentLocator->get('firephp')
+        );
     }
 }

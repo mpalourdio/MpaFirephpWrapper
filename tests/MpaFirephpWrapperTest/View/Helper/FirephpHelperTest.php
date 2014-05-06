@@ -21,10 +21,9 @@ class FirephpHelperTest extends \PHPUnit_Framework_TestCase
      */
     public function testFirephpHelper()
     {
-        $firePhpHelper = new FirephpHelper();
-        $pluginManager = ServiceManagerFactory::getServiceManager()->get('ControllerPluginManager');
-
-        $firePhpHelper->setServiceLocator($pluginManager);
+        $firePhpHelper = new FirephpHelper(
+            ServiceManagerFactory::getServiceManager()->get('firephp')
+        );
 
         $this->assertInstanceOf(FirephpWrapper::class, $firePhpHelper->__invoke('test'));
     }
@@ -34,10 +33,9 @@ class FirephpHelperTest extends \PHPUnit_Framework_TestCase
      */
     public function testHelperCallsLogsSomething()
     {
-        $firePhpHelper = new FirephpHelper();
-        $pluginManager = ServiceManagerFactory::getServiceManager()->get('ControllerPluginManager');
-
-        $firePhpHelper->setServiceLocator($pluginManager);
+        $firePhpHelper = new FirephpHelper(
+            ServiceManagerFactory::getServiceManager()->get('firephp')
+        );
 
         $this->assertEquals(1, $firePhpHelper->__invoke('test')->howManyLogged());
     }
