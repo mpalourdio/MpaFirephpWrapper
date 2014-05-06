@@ -9,10 +9,10 @@
  */
 
 use MpaFirephpWrapper\Collector\FirephpCollector;
-use MpaFirephpWrapper\Controller\Plugin\FirephpPlugin;
+use MpaFirephpWrapper\Controller\Plugin\FirephpPluginFactory;
 use MpaFirephpWrapper\Service\FirephpCollectorServiceFactory;
 use MpaFirephpWrapper\Service\FirephpFactory;
-use MpaFirephpWrapper\View\Helper\FirephpHelper;
+use MpaFirephpWrapper\View\Helper\FirephpHelperFactory;
 
 return [
     'service_manager'    => [
@@ -22,13 +22,13 @@ return [
         ]
     ],
     'controller_plugins' => [
-        'invokables' => [
-            'firephp' => FirephpPlugin::class,
+        'factories' => [
+            'firephp' => FirephpPluginFactory::class,
         ]
     ],
     'view_helpers'       => [
         'invokables' => [
-            'firephp' => FirephpHelper::class,
+            'firephp' => FirephpHelperFactory::class,
         ]
     ],
     'view_manager'       => [
