@@ -10,27 +10,24 @@
 
 namespace MpaFirephpWrapper\Controller\Plugin;
 
-use MpaFirephpWrapper\Service\FirephpWrapper;
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
-class FirephpPlugin extends AbstractPlugin
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+class FirephpPluginFactory implements FactoryInterface
 {
-    protected $firephp;
-
-    public function __construct(FirephpWrapper $firephp)
-    {
-        $this->firephp = $firephp;
-    }
-
     /**
-     * @param $object
-     * @param string $type
-     * @param string $label
-     * @param array $options
-     * @return FirephpWrapper
+     * Create service
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return FirephpPlugin
      */
-    public function __invoke($object, $type = 'info', $label = null, $options = [])
+    public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return $this->firephp->write($object, $type, $label, $options);
+        $parentLocator = $serviceLocator->getServiceLocator();
+
+        return new FirephpPlugin(
+            $parentLocator->get('firephp')
+        );
     }
 }

@@ -21,10 +21,9 @@ class FirephpPluginTest extends \PHPUnit_Framework_TestCase
      */
     public function testFirephpPlugin()
     {
-        $firePhpPlugin = new FirephpPlugin();
-        $pluginManager = ServiceManagerFactory::getServiceManager()->get('ControllerPluginManager');
-
-        $firePhpPlugin->setServiceLocator($pluginManager);
+        $firePhpPlugin = new FirephpPlugin(
+            ServiceManagerFactory::getServiceManager()->get('firephp')
+        );
 
         $this->assertInstanceOf(FirephpWrapper::class, $firePhpPlugin->__invoke('test'));
     }
@@ -34,10 +33,9 @@ class FirephpPluginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPluginCallsLogsSomething()
     {
-        $firePhpPlugin = new FirephpPlugin();
-        $pluginManager = ServiceManagerFactory::getServiceManager()->get('ControllerPluginManager');
-
-        $firePhpPlugin->setServiceLocator($pluginManager);
+        $firePhpPlugin = new FirephpPlugin(
+            ServiceManagerFactory::getServiceManager()->get('firephp')
+        );
 
         $this->assertEquals(1, $firePhpPlugin->__invoke('test')->howManyLogged());
     }
