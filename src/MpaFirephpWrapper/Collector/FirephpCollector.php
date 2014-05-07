@@ -48,7 +48,7 @@ class FirephpCollector implements CollectorInterface
      */
     public function collect(MvcEvent $mvcEvent)
     {
-        if (!is_null($this->firephp->howManyLogged())) {
+        if (null !== $this->firephp->howManyLogged()) {
             $this->howManyLogged = $this->firephp->howManyLogged();
         }
     }
