@@ -24,7 +24,15 @@ class FirephpWrapperTest extends \PHPUnit_Framework_TestCase
 
     public function testFirephpWrapperReallyWrapsFirePHP()
     {
-        $wrapper = (new FirephpWrapper($this->serviceManager))->getFirephp();
+        $wrapper = (new FirephpWrapper(ServiceManagerFactory::getApplicationConfig()))->getFirephp();
+        $this->assertInstanceOf('FirePHP', $wrapper);
+    }
+
+    public function testNoConfigProvidedIsNotAProblem()
+    {
+        $config =ServiceManagerFactory::getApplicationConfig();
+        unset($config['mpafirephpwrapper']);
+        $wrapper = (new FirephpWrapper($config))->getFirephp();
         $this->assertInstanceOf('FirePHP', $wrapper);
     }
 }

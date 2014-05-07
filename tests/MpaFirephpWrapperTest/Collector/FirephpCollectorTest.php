@@ -24,11 +24,27 @@ class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
 
     public function testCollector()
     {
-        $wrapper   = new FirephpWrapper($this->serviceManager);
+        $wrapper   = new FirephpWrapper($this->serviceManager->get('Config'));
         $collector = new FirephpCollector($wrapper);
 
         $this->assertEquals('mpa_firephp_wrapper_collector', $collector->getName());
         $this->assertEquals(0, $collector->getHowManyLogged());
         $this->assertEquals(150, $collector->getPriority());
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
+    public function testCollectorCollects()
+    {
+        $this->serviceManager->get('ViewHelperManager')
+            ->get('firephp')
+            ->__invoke('something');
+        $collector = new FirephpCollector($this->serviceManager->get('firephp'));
+        $collector->collect($this->getMock('Zend\\Mvc\\MvcEvent'));
+        $this->app = $this->serviceManager->get('Application');
+        $this->app->bootstrap();
+
+        $this->assertEquals(1, $collector->getHowManyLogged());
     }
 }

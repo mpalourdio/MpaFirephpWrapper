@@ -8,4 +8,12 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-return [];
+return [
+    'mpafirephpwrapper' => [
+        'maxObjectDepth'      => 3,
+        'maxArrayDepth'       => 3,
+        'maxDepth'            => 3,
+        'useNativeJsonEncode' => true,
+        'includeLineNumbers'  => true
+    ],
+];
