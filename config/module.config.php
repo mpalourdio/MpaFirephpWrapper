@@ -27,7 +27,7 @@ return [
         ]
     ],
     'view_helpers'       => [
-        'invokables' => [
+        'factories' => [
             'firephp' => FirephpHelperFactory::class,
         ]
     ],
