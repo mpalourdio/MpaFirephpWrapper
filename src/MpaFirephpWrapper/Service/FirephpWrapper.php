@@ -11,7 +11,6 @@
 namespace MpaFirephpWrapper\Service;
 
 use FirePHP;
-use Zend\ServiceManager\ServiceLocatorInterface;
 
 class FirephpWrapper
 {
@@ -20,13 +19,13 @@ class FirephpWrapper
     protected $howManyLogged;
 
     /**
-     * @param ServiceLocatorInterface $serviceLocator
+     * @param array $config
      * @return self
      */
-    public function __construct(ServiceLocatorInterface $serviceLocator)
+    public function __construct(array $config)
     {
         $this->setFirephp(new FirePHP());
-        $config = $serviceLocator->get('Config');
+
         if (array_key_exists('mpafirephpwrapper', $config)) {
             $options = $config['mpafirephpwrapper'];
         } else {

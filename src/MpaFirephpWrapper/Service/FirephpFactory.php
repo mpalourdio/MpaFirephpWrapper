@@ -17,6 +17,6 @@ class FirephpFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new FirephpWrapper($serviceLocator);
+        return new FirephpWrapper($serviceLocator->get('Config'));
     }
 }
