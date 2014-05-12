@@ -19,7 +19,7 @@ class FirephpWrapper
     protected $howManyLogged;
 
     /**
-     * @param array $config
+     * @param  array $config
      * @return self
      */
     public function __construct(array $config)
@@ -44,10 +44,10 @@ class FirephpWrapper
     }
 
     /**
-     * @param $object
-     * @param string $type
-     * @param null $label
-     * @param array $options
+     * @param        $object
+     * @param  string $type
+     * @param  null   $label
+     * @param  array  $options
      * @return self
      */
     public function write($object, $type = 'info', $label = null, $options = [])

@@ -10,7 +10,6 @@
 
 namespace MpaFirephpWrapper\View\Helper;
 
-
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -19,7 +18,7 @@ class FirephpHelperFactory implements FactoryInterface
     /**
      * Create service
      *
-     * @param ServiceLocatorInterface $serviceLocator
+     * @param  ServiceLocatorInterface $serviceLocator
      * @return FirephpHelper
      */
     public function createService(ServiceLocatorInterface $serviceLocator)

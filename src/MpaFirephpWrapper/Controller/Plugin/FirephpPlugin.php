@@ -23,10 +23,10 @@ class FirephpPlugin extends AbstractPlugin
     }
 
     /**
-     * @param $object
-     * @param string $type
-     * @param string $label
-     * @param array $options
+     * @param         $object
+     * @param  string $type
+     * @param  string $label
+     * @param  array  $options
      * @return FirephpWrapper
      */
     public function __invoke($object, $type = 'info', $label = null, $options = [])
