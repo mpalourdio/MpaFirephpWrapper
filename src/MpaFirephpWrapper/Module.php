@@ -15,6 +15,9 @@ use Zend\Mvc\MvcEvent;
 
 class Module implements ConfigProviderInterface
 {
+    /**
+     * @param MvcEvent $event
+     */
     public function onBootstrap(MvcEvent $event)
     {
         $serviceManager = $event->getApplication()->getServiceManager();

@@ -15,6 +15,10 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class FirephpFactory implements FactoryInterface
 {
+    /**
+     * @param  ServiceLocatorInterface $serviceLocator
+     * @return FirephpWrapper
+     */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         return new FirephpWrapper($serviceLocator->get('Config'));

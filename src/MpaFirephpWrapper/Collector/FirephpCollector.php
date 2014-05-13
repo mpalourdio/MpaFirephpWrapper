@@ -22,6 +22,9 @@ class FirephpCollector implements CollectorInterface
     protected $firephp;
     protected $howManyLogged = 0;
 
+    /**
+     * @param FirephpWrapper $firephp
+     */
     public function __construct(FirephpWrapper $firephp)
     {
         $this->firephp = $firephp;

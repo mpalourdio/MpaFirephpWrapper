@@ -17,6 +17,9 @@ class FirephpPlugin extends AbstractPlugin
 {
     protected $firephp;
 
+    /**
+     * @param FirephpWrapper $firephp
+     */
     public function __construct(FirephpWrapper $firephp)
     {
         $this->firephp = $firephp;
