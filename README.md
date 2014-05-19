@@ -41,7 +41,17 @@ $this->firephp($mythingtolog, 'warn'); // the different possibilites are log/inf
 Warning
 ==================================================
 
-Deep objects can freeze the plugin. You can set your own depth options in mpafirephpwrapper.config.global.php
+Deep objects can freeze the plugin. You can set your own depth options in mpafirephpwrapper.config.global.php. The default ones are :
+
+```php
+$options = [
+                'maxObjectDepth'      => 3,
+                'maxArrayDepth'       => 3,
+                'maxDepth'            => 3,
+                'useNativeJsonEncode' => true,
+                'includeLineNumbers'  => true
+            ];
+```
 
 ZDT integration
 ==================================================
