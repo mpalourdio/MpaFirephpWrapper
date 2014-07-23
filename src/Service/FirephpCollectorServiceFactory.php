@@ -17,9 +17,8 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class FirephpCollectorServiceFactory implements FactoryInterface
 {
     /**
-     * {@inheritDoc}
-     *
-     * @return \MpaFirephpwrapper\Collector\FirephpCollector
+     * @param  ServiceLocatorInterface $serviceLocator
+     * @return FirephpCollector
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
