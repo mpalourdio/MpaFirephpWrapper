@@ -32,7 +32,11 @@
     },
     "autoload":    {
         "psr-0": {
-            "MpaFirephpWrapper\\":     "src/",
+            "MpaFirephpWrapper\\":     "src/"
+        }
+    },
+    "autoload-dev":    {
+        "psr-0": {
             "MpaFirephpWrapperTest\\": "tests/"
         }
     },
