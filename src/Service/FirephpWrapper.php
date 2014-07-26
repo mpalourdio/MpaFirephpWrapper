@@ -11,6 +11,7 @@
 namespace MpaFirephpWrapper\Service;
 
 use FirePHP;
+use MpaFirephpWrapper\Options\FirephpWrapperOptions;
 
 class FirephpWrapper
 {
@@ -19,26 +20,12 @@ class FirephpWrapper
     protected $howManyLogged;
 
     /**
-     * @param  array $config
-     * @return self
+     * @param FirephpWrapperOptions $options
      */
-    public function __construct(array $config)
+    public function __construct(FirephpWrapperOptions $options)
     {
         $this->setFirephp(new FirePHP());
-
-        if (array_key_exists('mpafirephpwrapper', $config)) {
-            $options = $config['mpafirephpwrapper'];
-        } else {
-            $options = [
-                'maxObjectDepth'      => 3,
-                'maxArrayDepth'       => 3,
-                'maxDepth'            => 3,
-                'useNativeJsonEncode' => true,
-                'includeLineNumbers'  => true
-            ];
-        }
-
-        $this->firephp->setOptions($options);
+        $this->firephp->setOptions($options->toArray());
 
         return $this;
     }

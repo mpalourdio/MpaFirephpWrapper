@@ -8,22 +8,33 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-namespace MpaFirephpWrapper\Service;
+namespace MpaFirephpWrapper\Options;
 
-use MpaFirephpWrapper\Options\FirephpWrapperOptions;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class FirephpFactory implements FactoryInterface
+class FirephpWrapperOptionsFactory implements FactoryInterface
 {
     /**
+     * Create service
+     *
      * @param  ServiceLocatorInterface $serviceLocator
-     * @return FirephpWrapper
+     * @return FirephpWrapperOptions
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new FirephpWrapper(
-            $serviceLocator->get(FirephpWrapperOptions::class)
-        );
+        $config = $serviceLocator->get('config');
+
+        if (isset($config['mpafirephpwrapper'])) {
+            return new FirephpWrapperOptions($config['mpafirephpwrapper']);
+        }
+
+        return new FirephpWrapperOptions([
+            'maxObjectDepth'      => 3,
+            'maxArrayDepth'       => 3,
+            'maxDepth'            => 3,
+            'useNativeJsonEncode' => true,
+            'includeLineNumbers'  => true
+        ]);
     }
 }

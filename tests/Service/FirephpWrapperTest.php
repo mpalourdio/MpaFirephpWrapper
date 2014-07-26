@@ -10,6 +10,7 @@
 
 namespace MpaFirephpWrapperTest\Service;
 
+use MpaFirephpWrapper\Options\FirephpWrapperOptions;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 
@@ -24,15 +25,21 @@ class FirephpWrapperTest extends \PHPUnit_Framework_TestCase
 
     public function testFirephpWrapperReallyWrapsFirePHP()
     {
-        $wrapper = (new FirephpWrapper(ServiceManagerFactory::getApplicationConfig()))->getFirephp();
+        $wrapper = (new FirephpWrapper($this->serviceManager->get(FirephpWrapperOptions::class)))->getFirephp();
         $this->assertInstanceOf('FirePHP', $wrapper);
     }
 
     public function testNoConfigProvidedIsNotAProblem()
     {
-        $config =ServiceManagerFactory::getApplicationConfig();
-        unset($config['mpafirephpwrapper']);
-        $wrapper = (new FirephpWrapper($config))->getFirephp();
+        $config = ServiceManagerFactory::getApplicationConfig();
+        unset($config['module_listener_options']['config_glob_paths'][0]);
+
+        $wrapper = (
+            new FirephpWrapper(
+                ServiceManagerFactory::getServiceManager($config)->get(FirephpWrapperOptions::class)
+            )
+        )
+            ->getFirephp();
         $this->assertInstanceOf('FirePHP', $wrapper);
     }
 }

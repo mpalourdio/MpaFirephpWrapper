@@ -12,6 +12,7 @@ namespace MpaFirephpWrapper\Collector;
 
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use MpaFirephpWrapper\Options\FirephpWrapperOptions;
 
 class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,7 +25,7 @@ class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
 
     public function testCollector()
     {
-        $wrapper   = new FirephpWrapper($this->serviceManager->get('Config'));
+        $wrapper   = new FirephpWrapper($this->serviceManager->get(FirephpWrapperOptions::class));
         $collector = new FirephpCollector($wrapper);
 
         $this->assertEquals('mpa_firephp_wrapper_collector', $collector->getName());

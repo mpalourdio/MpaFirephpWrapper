@@ -10,6 +10,8 @@
 
 use MpaFirephpWrapper\Collector\FirephpCollector;
 use MpaFirephpWrapper\Controller\Plugin\FirephpPluginFactory;
+use MpaFirephpWrapper\Options\FirephpWrapperOptions;
+use MpaFirephpWrapper\Options\FirephpWrapperOptionsFactory;
 use MpaFirephpWrapper\Service\FirephpCollectorServiceFactory;
 use MpaFirephpWrapper\Service\FirephpFactory;
 use MpaFirephpWrapper\View\Helper\FirephpHelperFactory;
@@ -17,8 +19,9 @@ use MpaFirephpWrapper\View\Helper\FirephpHelperFactory;
 return [
     'service_manager'    => [
         'factories' => [
-            'firephp'               => FirephpFactory::class,
-            FirephpCollector::class => FirephpCollectorServiceFactory::class,
+            'firephp'                    => FirephpFactory::class,
+            FirephpCollector::class      => FirephpCollectorServiceFactory::class,
+            FirephpWrapperOptions::class => FirephpWrapperOptionsFactory::class,
         ]
     ],
     'controller_plugins' => [
