@@ -24,7 +24,7 @@ class FirephpPluginFactoryTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function testSessionManagerFactory()
+    public function testFactoryReturnsInstance()
     {
         $factory = new FirephpPluginFactory();
         $result  = $factory->createService($this->serviceManager->get('ControllerPluginManager'));

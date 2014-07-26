@@ -24,7 +24,7 @@ class FirephpHelperFactoryTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function testSessionManagerFactory()
+    public function testFactoryReturnsInstance()
     {
         $factory = new FirephpHelperFactory();
         $result  = $factory->createService($this->serviceManager->get('ViewHelperManager'));
