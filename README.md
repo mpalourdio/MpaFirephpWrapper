@@ -59,7 +59,7 @@ ZDT integration
 
 The Zend Developer Tools toolbar will show you how many events are logged to Firephp
 
-[ico-engine]: http://img.shields.io/badge/php-~5.4-8892BF.svg?style=flat
+[ico-engine]: http://img.shields.io/badge/php-~5.5+-8892BF.svg
 [lang]: http://php.net
-[ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg?style=flat
+[ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg
 [license]: LICENSE
