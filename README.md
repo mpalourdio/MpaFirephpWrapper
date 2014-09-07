@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.org/mpalourdio/MpaFirephpWrapper.png?branch=master)](https://travis-ci.org/mpalourdio/MpaFirephpWrapper)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/badges/quality-score.png?s=b7de6737f82c7b34c50a8d96c8950f875f43e2e3)](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/)
 [![Code Coverage](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/badges/coverage.png?s=fa857fb2a5ca1ff4a524ef4404cfdbb54f21c76e)](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/)
-
+[![PHP ~5.4][ico-engine]][lang]
+[![MIT Licensed][ico-license]][license]
 
 MpaFirephpWrapper
 =================
@@ -57,3 +58,8 @@ ZDT integration
 ==================================================
 
 The Zend Developer Tools toolbar will show you how many events are logged to Firephp
+
+[ico-engine]: http://img.shields.io/badge/php-~5.4-8892BF.svg?style=flat
+[lang]: http://php.net
+[ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg?style=flat
+[license]: LICENSE
