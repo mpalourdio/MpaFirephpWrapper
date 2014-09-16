@@ -8,8 +8,9 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-namespace MpaFirephpWrapper\Collector;
+namespace MpaFirephpWrapperTest\Collector;
 
+use MpaFirephpWrapper\Collector\FirephpCollector;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 use MpaFirephpWrapper\Options\FirephpWrapperOptions;
