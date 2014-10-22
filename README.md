@@ -22,9 +22,10 @@ extension.
 
 Installation
 ============
-Add to the **require** list of your top composer.json
-```php
-"mpalourdio/mpa-firephp-wrapper": "0.*"
+Run the command below to install via Composer
+
+```shell
+composer require mpalourdio/mpa-firephp-wrapper
 ```
 Add "MpaFirephpWrapper" to your **modules list** in **application.config.php**
 
