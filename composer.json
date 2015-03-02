@@ -34,12 +34,9 @@
         "zendframework/zend-developer-tools": "zend-developer-tools if you want to profile firephp logging"
     },
     "autoload":     {
-        "psr-4":    {
+        "psr-4": {
             "MpaFirephpWrapper\\": "src/"
-        },
-        "classmap": [
-            "Module.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
