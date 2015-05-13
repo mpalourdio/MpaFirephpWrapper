@@ -16,9 +16,6 @@ use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 
 class FirephpPluginTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @runInSeparateProcess
-     */
     public function testFirephpPlugin()
     {
         $firePhpPlugin = new FirephpPlugin(
@@ -28,9 +25,6 @@ class FirephpPluginTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(FirephpWrapper::class, $firePhpPlugin->__invoke('test'));
     }
 
-    /**
-     * @runInSeparateProcess
-     */
     public function testPluginCallsLogsSomething()
     {
         $firePhpPlugin = new FirephpPlugin(

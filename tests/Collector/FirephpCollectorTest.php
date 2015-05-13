@@ -34,9 +34,6 @@ class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(150, $collector->getPriority());
     }
 
-    /**
-     * @runInSeparateProcess
-     */
     public function testCollectorCollects()
     {
         $this->serviceManager->get('ViewHelperManager')
