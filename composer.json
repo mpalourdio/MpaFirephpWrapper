@@ -1,39 +1,39 @@
 {
-    "name":         "mpalourdio/mpa-firephp-wrapper",
-    "description":  "Lightweight ZF2 module that wraps firephp. Provides a view helper and a controller plugin. Easily configurable and usable",
-    "license":      "MIT",
-    "keywords":     [
+    "name": "mpalourdio/mpa-firephp-wrapper",
+    "description": "Lightweight ZF2 module that wraps firephp. Provides a view helper and a controller plugin. Easily configurable and usable",
+    "license": "MIT",
+    "keywords": [
         "firephp",
         "module",
         "zf2"
     ],
-    "homepage":     "https://github.com/mpalourdio/MpaFirephpWrapper",
-    "authors":      [
+    "homepage": "https://github.com/mpalourdio/MpaFirephpWrapper",
+    "authors": [
         {
-            "name":     "@mpalourdio",
-            "email":    "mpalourdio@gmail.com",
+            "name": "@mpalourdio",
+            "email": "mpalourdio@gmail.com",
             "homepage": "https://github.com/mpalourdio"
         }
     ],
-    "require":      {
-        "php":                               ">=5.5",
-        "firephp/firephp-core":              "~0.4",
+    "require": {
+        "php": ">=5.5",
+        "firephp/firephp-core": "~0.4",
         "zendframework/zend-servicemanager": "~2.3",
-        "zendframework/zend-mvc":            "~2.3",
-        "zendframework/zend-stdlib":         "~2.3",
-        "zendframework/zend-view":           "~2.3",
-        "zendframework/zend-modulemanager":  "~2.3"
+        "zendframework/zend-mvc": "~2.3",
+        "zendframework/zend-stdlib": "~2.3",
+        "zendframework/zend-view": "~2.3",
+        "zendframework/zend-modulemanager": "~2.3"
     },
-    "require-dev":  {
-        "zendframework/zendframework":        "~2.3",
+    "require-dev": {
+        "zendframework/zendframework": "~2.3",
         "zendframework/zend-developer-tools": "*",
-        "phpunit/phpunit":                    "~4.4",
-        "squizlabs/php_codesniffer":          "~2.3"
+        "phpunit/phpunit": "~4.4",
+        "squizlabs/php_codesniffer": "~2.3"
     },
-    "suggest":      {
+    "suggest": {
         "zendframework/zend-developer-tools": "zend-developer-tools if you want to profile firephp logging"
     },
-    "autoload":     {
+    "autoload": {
         "psr-4": {
             "MpaFirephpWrapper\\": "src/"
         }
@@ -43,7 +43,7 @@
             "MpaFirephpWrapperTest\\": "tests/"
         }
     },
-    "extra":        {
+    "extra": {
         "branch-alias": {
             "dev-master": "0.4.x-dev"
         }
