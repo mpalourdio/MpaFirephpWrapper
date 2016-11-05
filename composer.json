@@ -26,7 +26,7 @@
     },
     "require-dev": {
         "zendframework/zendframework": "~2.3",
-        "zendframework/zend-developer-tools": "*",
+        "zendframework/zend-developer-tools": "^1.0",
         "phpunit/phpunit": "~4.4",
         "squizlabs/php_codesniffer": "~2.3"
     },
