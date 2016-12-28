@@ -26,7 +26,7 @@ class FirephpFactoryTest extends TestCase
 
     public function testFirephpFactoryCanBeInitalized()
     {
-        $this->serviceManager->setService('firephptest', $this->getMock(FirephpFactory::class));
+        $this->serviceManager->setService('firephptest', $this->createMock(FirephpFactory::class));
 
         $factory = new FirephpFactory();
         $result  = $factory->createService($this->serviceManager);

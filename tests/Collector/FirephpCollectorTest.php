@@ -14,6 +14,7 @@ use MpaFirephpWrapper\Collector\FirephpCollector;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 use MpaFirephpWrapper\Options\FirephpWrapperOptions;
+use Zend\Mvc\MvcEvent;
 
 class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
 {
@@ -40,7 +41,7 @@ class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
             ->get('firephp')
             ->__invoke('something');
         $collector = new FirephpCollector($this->serviceManager->get('firephp'));
-        $collector->collect($this->getMock('Zend\\Mvc\\MvcEvent'));
+        $collector->collect($this->createMock(MvcEvent::class));
         $this->app = $this->serviceManager->get('Application');
         $this->app->bootstrap();
 
