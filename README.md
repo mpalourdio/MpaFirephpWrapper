@@ -2,10 +2,10 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/badges/quality-score.png?s=b7de6737f82c7b34c50a8d96c8950f875f43e2e3)](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/)
 [![Code Coverage](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/badges/coverage.png?s=fa857fb2a5ca1ff4a524ef4404cfdbb54f21c76e)](https://scrutinizer-ci.com/g/mpalourdio/MpaFirephpWrapper/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c810ca98-d7ff-42c5-a003-e54614759aa7/mini.png)](https://insight.sensiolabs.com/projects/c810ca98-d7ff-42c5-a003-e54614759aa7)
-[![PHP 5.6+][ico-engine]][lang]
+[![PHP 7.0+][ico-engine]][lang]
 [![MIT Licensed][ico-license]][license]
 
-[ico-engine]: http://img.shields.io/badge/php-5.6+-8892BF.svg
+[ico-engine]: http://img.shields.io/badge/php-7.0+-8892BF.svg
 [lang]: http://php.net
 [ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg
 [license]: LICENSE
@@ -18,7 +18,7 @@ Lightweight ZF2 module that wraps firephp. Provides a view helper and a controll
 Requirements
 ============
 
-PHP 5.6+
+PHP 7.0+
 
 Configuration
 =============
