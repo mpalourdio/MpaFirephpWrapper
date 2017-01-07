@@ -2,11 +2,15 @@ sudo: false
 
 language: php
 
-php:
-  - 7.0
-  - 7.1
-
 matrix:
+  include:
+    - php: hhvm-stable
+      sudo: required
+      dist: trusty
+    - php: 7.0
+    - php: 7.1
+  allow_failures:
+    - php: hhvm-stable
   fast_finish: true
 
 script:
@@ -14,6 +18,7 @@ script:
   - ./vendor/bin/phpunit --coverage-clover=coverage.clover
 
 before_script:
+  - echo hhvm.php7.all=1 >> /etc/hhvm/php.ini
   - composer self-update
   - composer install
 
