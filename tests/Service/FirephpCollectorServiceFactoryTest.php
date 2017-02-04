@@ -13,8 +13,9 @@ namespace MpaFirephpWrapperTest\Service;
 use MpaFirephpWrapper\Collector\FirephpCollector;
 use MpaFirephpWrapper\Service\FirephpCollectorServiceFactory;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 
-class FirephpCollectorServiceFactoryTest extends \PHPUnit_Framework_TestCase
+class FirephpCollectorServiceFactoryTest extends TestCase
 {
     protected $serviceManager;
 

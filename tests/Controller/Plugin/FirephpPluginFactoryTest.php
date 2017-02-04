@@ -6,8 +6,9 @@ use MpaFirephpWrapper\Controller\Plugin\FirephpPlugin;
 use MpaFirephpWrapper\Controller\Plugin\FirephpPluginFactory;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 
-class FirephpPluginFactoryTest extends \PHPUnit_Framework_TestCase
+class FirephpPluginFactoryTest extends TestCase
 {
     protected $serviceManager;
 

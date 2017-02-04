@@ -5,8 +5,9 @@ namespace MpaFirephpWrapperTest\Options;
 use MpaFirephpWrapper\Options\FirephpWrapperOptions;
 use MpaFirephpWrapper\Options\FirephpWrapperOptionsFactory;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 
-class FirephpWrapperOptionsFactoryTest extends \PHPUnit_Framework_TestCase
+class FirephpWrapperOptionsFactoryTest extends TestCase
 {
     public function testFactoryReturnsInstance()
     {

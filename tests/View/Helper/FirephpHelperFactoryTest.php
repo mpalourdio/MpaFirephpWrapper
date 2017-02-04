@@ -6,8 +6,9 @@ use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapper\View\Helper\FirephpHelper;
 use MpaFirephpWrapper\View\Helper\FirephpHelperFactory;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 
-class FirephpHelperFactoryTest extends \PHPUnit_Framework_TestCase
+class FirephpHelperFactoryTest extends TestCase
 {
     protected $serviceManager;
 

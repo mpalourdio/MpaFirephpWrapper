@@ -3,9 +3,10 @@
 namespace MpaFirephpWrapperTest;
 
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 use Zend\I18n\Translator\Plural\Rule;
 
-class ModuleTest extends \PHPUnit_Framework_TestCase
+class ModuleTest extends TestCase
 {
     protected $serviceManager;
 

@@ -13,8 +13,9 @@ namespace MpaFirephpWrapperTest\View\Helper;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapper\View\Helper\FirephpHelper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 
-class FirephpHelperTest extends \PHPUnit_Framework_TestCase
+class FirephpHelperTest extends TestCase
 {
     public function testFirephpHelper()
     {

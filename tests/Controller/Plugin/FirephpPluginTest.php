@@ -13,8 +13,9 @@ namespace MpaFirephpWrapperTest\Controller\Plugin;
 use MpaFirephpWrapper\Controller\Plugin\FirephpPlugin;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
+use PHPUnit\Framework\TestCase;
 
-class FirephpPluginTest extends \PHPUnit_Framework_TestCase
+class FirephpPluginTest extends TestCase
 {
     public function testFirephpPlugin()
     {

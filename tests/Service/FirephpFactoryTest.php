@@ -13,7 +13,7 @@ namespace MpaFirephpWrapperTest\Service;
 use MpaFirephpWrapper\Service\FirephpFactory;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 class FirephpFactoryTest extends TestCase
 {
@@ -29,7 +29,7 @@ class FirephpFactoryTest extends TestCase
         $this->serviceManager->setService('firephptest', $this->createMock(FirephpFactory::class));
 
         $factory = new FirephpFactory();
-        $result  = $factory->createService($this->serviceManager);
+        $result = $factory->createService($this->serviceManager);
         $this->assertInstanceOf(FirephpWrapper::class, $result);
     }
 }

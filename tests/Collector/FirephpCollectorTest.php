@@ -14,9 +14,10 @@ use MpaFirephpWrapper\Collector\FirephpCollector;
 use MpaFirephpWrapper\Service\FirephpWrapper;
 use MpaFirephpWrapperTest\Util\ServiceManagerFactory;
 use MpaFirephpWrapper\Options\FirephpWrapperOptions;
+use PHPUnit\Framework\TestCase;
 use Zend\Mvc\MvcEvent;
 
-class FirephpCollectorTest extends \PHPUnit_Framework_TestCase
+class FirephpCollectorTest extends TestCase
 {
     protected $serviceManager;
 
